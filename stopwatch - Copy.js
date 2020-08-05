@@ -183,7 +183,7 @@ function checkAnswer() {
          }
       }
 
-      alert('[*For testing purposes*] Answer is: ' + largestCombo + ' and ' + totalQuantity); //uncomment this if you want the correct answer to display for testing purposes before it tells you if the answer is correct or incorrect
+      //alert('[*For testing purposes*] Answer is: ' + largestCombo + ' and ' + totalQuantity); //uncomment this if you want the correct answer to display for testing purposes before it tells you if the answer is correct or incorrect
 
       if (totalQuantity == userInput && largestCombo == totalSales) {
          document.getElementById("result").style.color = "green";
