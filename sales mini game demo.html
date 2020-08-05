@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <header>
+        <h1>Sales game Demo</h1>
+        <li>Click "Begin game" to start each round</li>
+        <li>Click "Generate Sales Data" to generate Data table</li>
+        <li>Click "Sales by Region"</li>
+        <li>Populate Sales by Region input box and highest sales Dropdowns</li>
+        <li>Click "Check Answer"</li>
+        <h6>The faster you get the correct answer, the higher your score! Bonus points for best automations</h6>
+
+        <hr>
+    </header>
+
+    <title>Sales Game</title>
+    <h3>Total Score: <span id="total">0</span>
+    </h3>
+    <h3>Round: <span id="round">1</span>
+    </h3>
+    <h2>Score: <span id="demo">1000</span></h2>
+    <br>
+    <br>
+</head>
+
+<body class='container-fluid'>
+    <button class="btn btn-success" onclick="clock()">Begin game</button>
+    <br>
+    <br>
+
+    <input type="button" class="btn btn-primary" onclick="createTable2()" value="Sales by Region">
+
+    <input type="button" class="btn btn-primary" onclick="createTable()" value="Generate Sales Data">
+    <br>
+    <br>
+    <br>
+    <table id="salesbyregion" class="table table-bordered col-6 col-md-4" border="1" width="25%" height="25%">
+        <thead class="thead-light">
+            <tr align="center">
+                <th>Region</th>
+                <th>Product</th>
+            </tr>
+        </thead>
+    </table>
+    <br>
+    <h6>Use a data manipulation tool to find Total Sales (Qty * Price) by the Product and Region above:</h6>
+    <br>
+    <label for="quantity">
+        <h6>Sales by Region:</h6>
+    </label>
+    <input type="number" id="quantity" name="quantity" min="1" max="100000000">
+    <br>
+    <br>
+
+    <h6>Use data visualization to find the Product and Region with the highest Total Sales (Qty * Price):</h6>
+
+    <table id="example" class="table table-bordered" style="width:25%">
+        <thead>
+            <tr>
+                <th>Region</th>
+                <th>Product</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align="center">
+                <td><select size="1" id="regionSelect" name="row-1-office">
+                        <option value="" selected="selected">
+
+                        </option>
+                        <option value="North">
+                            North
+                        </option>
+                        <option value="South">
+                            South
+                        </option>
+                        <option value="East">
+                            East
+                        </option>
+                        <option value="West">
+                            West
+                        </option>
+                    </select></td>
+                <td><select size="1" id="productSelect" name="row-1-office">
+                        <option value="" selected="selected">
+
+                        </option>
+                        <option value="Rock">
+                            Rock
+                        </option>
+                        <option value="Paper">
+                            Paper
+                        </option>
+                        <option value="Scissors">
+                            Scissors
+                        </option>
+                    </select></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h5><span id="result"> </span></h5>
+    <br>
+    <button class="btn btn-primary" onclick="checkAnswer()">Check Answer</button>
+    <button class="btn btn-secondary" onclick="exportTableToCSV('sales.csv')">Export Sales Data</button>
+    <br>
+    <br>
+    <table class="table table-bordered col-6 col-md-4" id="myTable" border="1">
+        <thead class="thead-light">
+            <tr>
+                <th>Region</th>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+    </table>
+
+
+
+    <script src="stopwatch - Copy.js" charset="utf-8" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
